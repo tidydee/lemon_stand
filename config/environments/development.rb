@@ -1,4 +1,4 @@
-Rails.application.configure do
+LemonStand::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -37,5 +37,6 @@ Rails.application.configure do
   config.assets.raise_runtime_errors = true
 
   # Raises error for missing translations
+  config.secret_key_base = "sdjfklsdfjls"
   # config.action_view.raise_on_missing_translations = true
 end

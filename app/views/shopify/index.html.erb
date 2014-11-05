@@ -1,0 +1,59 @@
+<h1> Welcome to Lemon Stand </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th><h3>Title</h3></th>
+      <th><h3>Description</h3></th>
+      <th><h3>Price</h3></th>
+      <th><h3>Image</h3></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+    <% product.variants.each do |variant| %>
+    <tr>
+      <td><%= product.title %></td>
+      <td><%= product.body_html %></td>
+      <td><%= variant.price %></td>
+      <td>
+        <% product.images.each do |image| %>
+        <%= image_tag(image.src, size: "99x125",) %>
+        <% end %>
+        <%= link_to "Buy Now!", shopify_path({product_id: product.id}), method: :post %>
+      </td>
+    <% end %>
+    <% end %>
+    </tr>
+  </tbody>
+</table> <br>
+
+
+
+
+
+<!-- <h1>Listing Books</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Summary</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+ 
+<%# @books.each do |book| %>
+  <tr>
+    <td><%# book.title %></td>
+    <td><%# book.content %></td>
+    <td><%# link_to "Show", book %></td>
+    <td><%# link_to "Edit", edit_book_path(book) %></td>
+    <td><%# link_to "Remove", book, method: :delete, data: { confirm: "Are you sure?" } %></td>
+  </tr>
+<%# end %>
+</table>
+ 
+<br>
+ 
+<%# link_to "New book", new_book_path %> -->
